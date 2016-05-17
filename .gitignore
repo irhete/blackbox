@@ -1,0 +1,11 @@
+1_MC_approx/
+checkpoints_greedy_bot/
+fast_Q_learning/
+fast_bot/
+first_solution.tar.gz
+interface.so
+levels/
+lib/
+regression_bot/
+setup.py
+simple_bot/
