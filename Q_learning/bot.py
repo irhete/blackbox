@@ -40,6 +40,7 @@ def run_bbox(verbose=False):
  
     while has_next:
         state = bbox.get_state()
+        state = np.append(state, 1)
         action = get_action_by_state(state)
         has_next = bbox.do_action(action)
  

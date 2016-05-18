@@ -7,16 +7,16 @@ last_score = 0.0
 alpha = 0.001
 eps = 0.18
 eps_decay = 1.01
-gamma = 0.9
-iterations = 1000
-batch_size = 10
+gamma = 1
+iterations = 3
+batch_size = 7
+reg_coefs_file = "../regression_bot/reg_coefs.txt"
 output_file = "weights.npy"
 w = None
 experiences = []
 
 def update_weights():
     global w
-
     for _ in range(batch_size):
         s, a, r, s_prim, smpl_has_next = experiences[randint(0, len(experiences)-1)]
         if not smpl_has_next:
@@ -31,12 +31,9 @@ def update_weights():
 def get_action_by_state(state, verbose=0):
     if random() <= eps:
         return randint(0, n_actions-1)
-    vals = [calc_action_val(act, state) for act in xrange(n_actions)]
+    vals = [np.dot(state, w[act]) for act in xrange(n_actions)]
 
     return np.argmax(vals)
-
-def calc_action_val(action, state):
-    return np.dot(state, w[action])
 
 
 n_features = n_actions = max_time = -1
@@ -60,10 +57,12 @@ def run_bbox(verbose=False):
     prepare_bbox()
 
     if w is None:
-        w = np.random.rand(n_actions, n_features)
+        w = load_regression_coefs(reg_coefs_file)
+        #w = np.random.rand(n_actions, n_features+1)
   
+    state = bbox.get_state()
+    state = np.append(state, 1)
     while has_next:
-        state = bbox.get_state()
         action = get_action_by_state(state)
         has_next = bbox.do_action(action)
 
@@ -72,14 +71,22 @@ def run_bbox(verbose=False):
         last_score = current_score
 
         new_state = bbox.get_state()
+        new_state = np.append(new_state, 1)
 
         experiences.append((state, action, reward, new_state, has_next))
 
         update_weights()
 
+        state = new_state
+
     bbox.finish(verbose=1)
     
- 
+
+def load_regression_coefs(filename):
+    return (np.loadtxt(filename).reshape(n_actions, n_features + 1))
+    #reg_coefs = coefs[:,:-1]
+    #free_coefs = coefs[:,-1]
+
  
 if __name__ == "__main__":
     for i in range(iterations):
