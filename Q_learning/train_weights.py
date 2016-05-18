@@ -5,7 +5,7 @@ import math
 
 last_score = 0.0
 alpha = 0.001
-eps = 0.18
+eps = 0.05
 eps_decay = 1.01
 gamma = 1
 iterations = 3

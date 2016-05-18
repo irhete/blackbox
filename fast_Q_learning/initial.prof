@@ -1,0 +1,121 @@
+Level has been loaded: max_time = 1214494, n_features = 36, n_actions = 4
+Level score= -15660.403320
+0
+Wed May 18 13:51:26 2016    Profile.prof
+
+         24124842 function calls (24124024 primitive calls) in 76.181 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+  1214494   24.666    0.000   29.196    0.000 train_weights.pyx:23(update_weights)
+  1214494   10.192    0.000   27.010    0.000 train_weights.pyx:36(get_action_by_state)
+        1    6.283    6.283   76.166   76.166 train_weights.pyx:58(run_bbox)
+  3582935    6.230    0.000    6.230    0.000 {numpy.core.multiarray.array}
+  1153944    6.129    0.000   16.590    0.000 fromnumeric.py:911(argmax)
+  1153944    3.774    0.000   10.461    0.000 fromnumeric.py:43(_wrapit)
+  1214495    3.598    0.000    3.598    0.000 {numpy.core.multiarray.concatenate}
+  1275044    3.217    0.000    3.467    0.000 random.py:175(randrange)
+  1214495    2.720    0.000   13.676    0.000 function_base.py:4098(append)
+  1153944    1.647    0.000    1.647    0.000 {method 'argmax' of 'numpy.ndarray' objects}
+  2428991    1.626    0.000    4.212    0.000 numeric.py:476(asanyarray)
+  1214495    1.574    0.000    6.206    0.000 fromnumeric.py:1377(ravel)
+  1275044    1.291    0.000    4.758    0.000 random.py:238(randint)
+  1153944    0.913    0.000    4.557    0.000 numeric.py:406(asarray)
+  1215701    0.822    0.000    0.822    0.000 {isinstance}
+  1214495    0.750    0.000    0.750    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+  1153944    0.483    0.000    0.483    0.000 {getattr}
+  1275044    0.250    0.000    0.250    0.000 {method 'random' of '_random.Random' objects}
+    115/6    0.002    0.000    0.006    0.001 sre_parse.py:395(_parse)
+    262/6    0.002    0.000    0.005    0.001 sre_compile.py:64(_compile)
+        1    0.001    0.001    0.015    0.015 format.py:426(_filter_header)
+        1    0.001    0.001    0.001    0.001 train_weights.pyx:46(prepare_bbox)
+      904    0.001    0.000    0.001    0.000 sre_parse.py:193(__next)
+  377/123    0.001    0.000    0.001    0.000 sre_parse.py:151(getwidth)
+     1185    0.001    0.000    0.001    0.000 sre_parse.py:141(__getitem__)
+      115    0.001    0.000    0.001    0.000 sre_compile.py:256(_optimize_charset)
+        1    0.001    0.001    0.013    0.013 tokenize.py:23(<module>)
+4023/3874    0.000    0.000    0.000    0.000 {len}
+     56/6    0.000    0.000    0.006    0.001 sre_parse.py:317(_parse_sub)
+     3208    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+      735    0.000    0.000    0.001    0.000 sre_parse.py:212(get)
+      115    0.000    0.000    0.002    0.000 sre_compile.py:228(_compile_charset)
+      718    0.000    0.000    0.000    0.000 sre_parse.py:206(match)
+      562    0.000    0.000    0.000    0.000 sre_parse.py:137(__len__)
+       25    0.000    0.000    0.000    0.000 sre_compile.py:411(_mk_bitmap)
+      117    0.000    0.000    0.000    0.000 sre_compile.py:428(_simple)
+      439    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
+        6    0.000    0.000    0.012    0.002 re.py:230(_compile)
+      262    0.000    0.000    0.000    0.000 sre_parse.py:92(__init__)
+      609    0.000    0.000    0.000    0.000 {min}
+        2    0.000    0.000    0.000    0.000 {imp.find_module}
+      310    0.000    0.000    0.000    0.000 sre_parse.py:149(append)
+        1    0.000    0.000    0.000    0.000 {open}
+        1    0.000    0.000    0.000    0.000 token.py:1(<module>)
+       21    0.000    0.000    0.000    0.000 tokenize.py:287(generate_tokens)
+       67    0.000    0.000    0.000    0.000 sre_parse.py:268(_escape)
+       19    0.000    0.000    0.000    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+        1    0.000    0.000   76.181   76.181 train_weights.pyx:93(train)
+        3    0.000    0.000    0.000    0.000 {method 'close' of 'file' objects}
+        1    0.000    0.000    0.015    0.015 format.py:283(_write_array_header)
+        6    0.000    0.000    0.000    0.000 {_sre.compile}
+        6    0.000    0.000    0.006    0.001 sre_parse.py:706(parse)
+      285    0.000    0.000    0.000    0.000 {ord}
+      117    0.000    0.000    0.000    0.000 sre_parse.py:145(__setitem__)
+        6    0.000    0.000    0.012    0.002 sre_compile.py:567(compile)
+        1    0.000    0.000    0.000    0.000 tokenize.py:199(untokenize)
+       38    0.000    0.000    0.000    0.000 sre_parse.py:236(_class_escape)
+      145    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        6    0.000    0.000    0.001    0.000 sre_compile.py:433(_compile_info)
+       38    0.000    0.000    0.000    0.000 sre_parse.py:74(opengroup)
+       39    0.000    0.000    0.000    0.000 {range}
+        6    0.000    0.000    0.012    0.002 re.py:192(compile)
+        1    0.000    0.000    0.000    0.000 {dir}
+       38    0.000    0.000    0.000    0.000 sre_parse.py:85(closegroup)
+       25    0.000    0.000    0.000    0.000 {method 'translate' of 'str' objects}
+        1    0.000    0.000    0.015    0.015 format.py:518(write_array)
+       90    0.000    0.000    0.000    0.000 {max}
+       65    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        6    0.000    0.000    0.006    0.001 sre_compile.py:552(_code)
+        2    0.000    0.000    0.000    0.000 {method 'write' of 'file' objects}
+        1    0.000    0.000    0.015    0.015 npyio.py:422(save)
+        2    0.000    0.000    0.000    0.000 pyximport.py:239(find_module)
+       38    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+        8    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       19    0.000    0.000    0.000    0.000 tokenize.py:45(group)
+       19    0.000    0.000    0.000    0.000 tokenize.py:186(add_whitespace)
+        1    0.000    0.000    0.000    0.000 format.py:223(dtype_to_descr)
+       21    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       25    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        1    0.000    0.000    0.012    0.012 {map}
+       12    0.000    0.000    0.000    0.000 sre_compile.py:546(isstring)
+        6    0.000    0.000    0.000    0.000 sre_parse.py:189(__init__)
+        1    0.000    0.000    0.000    0.000 format.py:255(header_data_from_array_1_0)
+        3    0.000    0.000    0.000    0.000 {repr}
+        1    0.000    0.000    0.000    0.000 {_struct.pack}
+        1    0.000    0.000    0.000    0.000 StringIO.py:54(__init__)
+        2    0.000    0.000    0.000    0.000 StringIO.py:119(read)
+        1    0.000    0.000    0.000    0.000 {sorted}
+       19    0.000    0.000    0.000    0.000 {method 'span' of '_sre.SRE_Match' objects}
+        1    0.000    0.000    0.000    0.000 format.py:176(magic)
+        1    0.000    0.000   76.181   76.181 <string>:1(<module>)
+        3    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        6    0.000    0.000    0.000    0.000 sre_parse.py:67(__init__)
+        1    0.000    0.000    0.000    0.000 tokenize.py:266(untokenize)
+        1    0.000    0.000    0.000    0.000 {method 'tofile' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 tokenize.py:47(maybe)
+        1    0.000    0.000    0.000    0.000 format.py:171(_check_version)
+        1    0.000    0.000   76.181   76.181 {train_weights.train}
+        1    0.000    0.000    0.000    0.000 tokenize.py:179(Untokenizer)
+        1    0.000    0.000    0.000    0.000 tokenize.py:46(any)
+        1    0.000    0.000    0.000    0.000 tokenize.py:148(StopTokenizing)
+        1    0.000    0.000    0.000    0.000 {iter}
+        2    0.000    0.000    0.000    0.000 {chr}
+        1    0.000    0.000    0.000    0.000 tokenize.py:181(__init__)
+        1    0.000    0.000    0.000    0.000 py3k.py:60(isfileobj)
+        1    0.000    0.000    0.000    0.000 {globals}
+        2    0.000    0.000    0.000    0.000 StringIO.py:38(_complain_ifclosed)
+        1    0.000    0.000    0.000    0.000 tokenize.py:146(TokenError)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+

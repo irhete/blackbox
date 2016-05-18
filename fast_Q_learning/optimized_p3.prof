@@ -1,0 +1,112 @@
+Level has been loaded: max_time = 1214494, n_features = 36, n_actions = 4
+Level score= -7981.532227
+0
+Wed May 18 14:58:59 2016    Profile.prof
+
+         20110061 function calls (20109611 primitive calls) in 9.530 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+  1214494    1.758    0.000    6.234    0.000 train_weights.pyx:25(update_weights)
+ 10685734    1.643    0.000    1.643    0.000 train_weights.pyx:72(calc_val_for_action)
+        1    1.574    1.574    9.523    9.523 train_weights.pyx:95(run_bbox)
+  1275672    1.277    0.000    2.924    0.000 random.py:170(randrange)
+  1275672    1.208    0.000    1.647    0.000 random.py:220(_randbelow)
+  1214494    1.015    0.000    1.715    0.000 train_weights.pyx:55(get_action_by_state)
+  1275672    0.609    0.000    3.533    0.000 random.py:214(randint)
+  1883654    0.288    0.000    0.288    0.000 {method 'getrandbits' of '_random.Random' objects}
+  1275672    0.151    0.000    0.151    0.000 {method 'bit_length' of 'int' objects}
+     67/1    0.001    0.000    0.003    0.003 sre_parse.py:441(_parse)
+      508    0.001    0.000    0.001    0.000 sre_parse.py:195(__next)
+    142/1    0.001    0.000    0.002    0.002 sre_compile.py:70(_compile)
+   196/55    0.000    0.000    0.001    0.000 sre_parse.py:152(getwidth)
+       61    0.000    0.000    0.001    0.000 sre_compile.py:255(_optimize_charset)
+      614    0.000    0.000    0.001    0.000 sre_parse.py:142(__getitem__)
+      142    0.000    0.000    0.000    0.000 sre_parse.py:90(__init__)
+2212/2135    0.000    0.000    0.000    0.000 {built-in method len}
+     26/1    0.000    0.000    0.003    0.003 sre_parse.py:363(_parse_sub)
+     1762    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 train_weights.pyx:83(prepare_bbox)
+      623    0.000    0.000    0.000    0.000 {built-in method isinstance}
+      403    0.000    0.000    0.001    0.000 sre_parse.py:220(get)
+      396    0.000    0.000    0.000    0.000 sre_parse.py:214(match)
+       61    0.000    0.000    0.001    0.000 sre_compile.py:227(_compile_charset)
+        1    0.000    0.000    0.000    0.000 {method 'tofile' of 'numpy.ndarray' objects}
+       21    0.000    0.000    0.006    0.000 tokenize.py:474(_tokenize)
+        1    0.000    0.000    9.530    9.530 train_weights.pyx:131(train)
+        1    0.000    0.000    0.000    0.000 {built-in method open}
+       54    0.000    0.000    0.000    0.000 sre_compile.py:418(_simple)
+      229    0.000    0.000    0.000    0.000 sre_parse.py:138(__len__)
+       19    0.000    0.000    0.006    0.000 re.py:277(_compile)
+      267    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
+        1    0.000    0.000    9.530    9.530 {built-in method exec}
+      163    0.000    0.000    0.000    0.000 sre_parse.py:150(append)
+       19    0.000    0.000    0.000    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+      346    0.000    0.000    0.000    0.000 {built-in method min}
+        1    0.000    0.000    0.006    0.006 format.py:283(_write_array_header)
+        1    0.000    0.000    0.006    0.006 format.py:426(_filter_header)
+        1    0.000    0.000    0.007    0.007 npyio.py:422(save)
+        9    0.000    0.000    0.000    0.000 sre_compile.py:408(<listcomp>)
+        9    0.000    0.000    0.000    0.000 sre_compile.py:406(_mk_bitmap)
+        1    0.000    0.000    0.000    0.000 tokenize.py:244(untokenize)
+        1    0.000    0.000    0.000    0.000 {built-in method array}
+       24    0.000    0.000    0.000    0.000 sre_parse.py:307(_escape)
+       20    0.000    0.000    0.000    0.000 <string>:12(__new__)
+       61    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.006    0.006 format.py:518(write_array)
+       54    0.000    0.000    0.000    0.000 sre_parse.py:146(__setitem__)
+       19    0.000    0.000    0.006    0.000 tokenize.py:170(_compile)
+      173    0.000    0.000    0.000    0.000 {built-in method ord}
+        1    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedWriter' objects}
+       13    0.000    0.000    0.000    0.000 sre_parse.py:265(_class_escape)
+        1    0.000    0.000    0.006    0.006 sre_compile.py:563(compile)
+        1    0.000    0.000    0.000    0.000 {built-in method compile}
+       19    0.000    0.000    0.000    0.000 tokenize.py:231(add_whitespace)
+       18    0.000    0.000    0.000    0.000 sre_parse.py:83(closegroup)
+       63    0.000    0.000    0.000    0.000 {built-in method max}
+        1    0.000    0.000    0.000    0.000 format.py:255(header_data_from_array_1_0)
+       18    0.000    0.000    0.000    0.000 sre_parse.py:72(opengroup)
+        1    0.000    0.000    0.000    0.000 format.py:223(dtype_to_descr)
+        1    0.000    0.000    0.003    0.003 sre_parse.py:750(parse)
+       20    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x97bda0}
+        1    0.000    0.000    0.000    0.000 numeric.py:476(asanyarray)
+        1    0.000    0.000    0.000    0.000 format.py:176(magic)
+       19    0.000    0.000    0.006    0.000 re.py:221(compile)
+        1    0.000    0.000    0.000    0.000 {built-in method sorted}
+        3    0.000    0.000    0.000    0.000 {built-in method repr}
+       18    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 py3k.py:28(asbytes)
+        1    0.000    0.000    9.530    9.530 <string>:1(<module>)
+        4    0.000    0.000    0.000    0.000 stringsource:112(__Pyx_carray_to_py_float)
+        1    0.000    0.000    0.002    0.002 sre_compile.py:548(_code)
+        1    0.000    0.000    0.000    0.000 py3k.py:38(isfileobj)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:2264(_handle_fromlist)
+        1    0.000    0.000    0.000    0.000 tokenize.py:225(__init__)
+       12    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+        9    0.000    0.000    0.000    0.000 {method 'translate' of 'bytearray' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method pack}
+        1    0.000    0.000    0.000    0.000 sre_parse.py:190(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method hasattr}
+        2    0.000    0.000    0.000    0.000 {method 'write' of '_io.BufferedWriter' objects}
+        1    0.000    0.000    9.530    9.530 {train_weights.train}
+        2    0.000    0.000    0.000    0.000 sre_compile.py:545(isstring)
+        1    0.000    0.000    0.000    0.000 stringsource:112(__Pyx_carray_to_py_float____36__)
+        1    0.000    0.000    0.000    0.000 tokenize.py:301(untokenize)
+       19    0.000    0.000    0.000    0.000 {method 'span' of '_sre.SRE_Match' objects}
+        1    0.000    0.000    0.000    0.000 format.py:171(_check_version)
+        1    0.000    0.000    0.000    0.000 sre_parse.py:67(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 tokenize.py:628(generate_tokens)
+        2    0.000    0.000    0.000    0.000 {method 'read' of '_io.StringIO' objects}
+        1    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 py3k.py:33(asstr)
+        1    0.000    0.000    0.001    0.001 sre_compile.py:444(_compile_info)
+        9    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 sre_parse.py:738(fix_flags)
+        1    0.000    0.000    0.000    0.000 {built-in method iter}
+        1    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        2    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+
+
