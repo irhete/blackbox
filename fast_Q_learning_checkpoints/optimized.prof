@@ -1,0 +1,63 @@
+Level has been loaded: max_time = 1214494, n_features = 36, n_actions = 4
+Level score= -12131.650391
+0
+Wed May 18 14:54:34 2016    Profile.prof
+
+         16942713 function calls in 8.630 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+  1274902    2.128    0.000    2.263    0.000 random.py:175(randrange)
+        1    1.693    1.693    8.629    8.629 train_weights.pyx:95(run_bbox)
+  1214494    1.541    0.000    5.473    0.000 train_weights.pyx:25(update_weights)
+ 10688814    1.495    0.000    1.495    0.000 train_weights.pyx:72(calc_val_for_action)
+  1214494    0.868    0.000    1.464    0.000 train_weights.pyx:55(get_action_by_state)
+  1274902    0.769    0.000    3.033    0.000 random.py:238(randint)
+  1274902    0.135    0.000    0.135    0.000 {method 'random' of '_random.Random' objects}
+        1    0.000    0.000    0.000    0.000 train_weights.pyx:83(prepare_bbox)
+        1    0.000    0.000    8.630    8.630 train_weights.pyx:131(train)
+        1    0.000    0.000    0.000    0.000 {open}
+       21    0.000    0.000    0.000    0.000 tokenize.py:287(generate_tokens)
+        1    0.000    0.000    0.000    0.000 {method 'close' of 'file' objects}
+       19    0.000    0.000    0.000    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+        1    0.000    0.000    0.000    0.000 format.py:283(_write_array_header)
+        1    0.000    0.000    0.000    0.000 format.py:426(_filter_header)
+        1    0.000    0.000    0.001    0.001 npyio.py:422(save)
+        1    0.000    0.000    0.000    0.000 tokenize.py:199(untokenize)
+        1    0.000    0.000    0.000    0.000 {numpy.core.multiarray.array}
+        1    0.000    0.000    0.000    0.000 format.py:518(write_array)
+       51    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'write' of 'file' objects}
+        1    0.000    0.000    0.000    0.000 format.py:255(header_data_from_array_1_0)
+       19    0.000    0.000    0.000    0.000 tokenize.py:186(add_whitespace)
+        3    0.000    0.000    0.000    0.000 {repr}
+        1    0.000    0.000    0.000    0.000 {_struct.pack}
+       19    0.000    0.000    0.000    0.000 {method 'span' of '_sre.SRE_Match' objects}
+        1    0.000    0.000    0.000    0.000 numeric.py:476(asanyarray)
+        2    0.000    0.000    0.000    0.000 StringIO.py:119(read)
+        1    0.000    0.000    0.000    0.000 format.py:223(dtype_to_descr)
+        1    0.000    0.000    0.000    0.000 tokenize.py:266(untokenize)
+        1    0.000    0.000    0.000    0.000 stringsource:77(__Pyx_carray_to_py_float____36__)
+        1    0.000    0.000    0.000    0.000 {sorted}
+        1    0.000    0.000    8.630    8.630 <string>:1(<module>)
+        1    0.000    0.000    8.630    8.630 {train_weights.train}
+        3    0.000    0.000    0.000    0.000 {isinstance}
+        4    0.000    0.000    0.000    0.000 stringsource:77(__Pyx_carray_to_py_float)
+        1    0.000    0.000    0.000    0.000 StringIO.py:54(__init__)
+        1    0.000    0.000    0.000    0.000 format.py:171(_check_version)
+        1    0.000    0.000    0.000    0.000 format.py:176(magic)
+       25    0.000    0.000    0.000    0.000 {len}
+        2    0.000    0.000    0.000    0.000 {chr}
+        1    0.000    0.000    0.000    0.000 {method 'tofile' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 {max}
+        2    0.000    0.000    0.000    0.000 StringIO.py:38(_complain_ifclosed)
+        1    0.000    0.000    0.000    0.000 {iter}
+        2    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 tokenize.py:181(__init__)
+        1    0.000    0.000    0.000    0.000 py3k.py:60(isfileobj)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+
+
