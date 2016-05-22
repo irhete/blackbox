@@ -9,18 +9,18 @@ from random import random, seed, randint
 import math
 
 cdef:
-    float last_score = 0.0, alpha = 0.0001, eps = 0.1, eps_decay = 1.05, alpha_decay = 1.05, gamma = 0.9
-    int iterations = 1000, N = 0
+    float last_score = 0.0, alpha = 1, eps = 0.1, eps_decay = 1.05, alpha_decay = 1.05, gamma = 1
+    int iterations = 1, N = 0
     int n_features = 36, n_actions = 4, max_time = 1214494
     float w[4][36]
     float bias[4]
     float exp_states[1214494][36]
     int exp_actions[1214494]
     float exp_rewards[1214494]
-    int best_action_batch_size = 100
 
 output_file_w = "weights.npy"
 output_file_bias = "bias.npy"
+train_file = "train_data.csv"
 
 def update_weights(int total):
     global w, bias
@@ -61,25 +61,6 @@ cdef int get_action_by_state(float* state):
     
     return best_act
 
-cdef int calc_best_action_using_checkpoint():
-    # Pretty straightforward — we create a checkpoint and get it's ID 
-    checkpoint_id = bbox.create_checkpoint()
-
-    cdef int best_action = -1, action
-    cdef float best_score = -1e9
-
-    for action in range(n_actions):
-        for _ in range(best_action_batch_size):
-            bbox.do_action(action)
-
-        if bbox.c_get_score() > best_score:
-            best_score = bbox.c_get_score()
-            best_action = action
-
-        bbox.load_from_checkpoint(checkpoint_id)
-
-    return best_action
-
 
 cdef float calc_val_for_action(float* state, int action):
     cdef:
@@ -90,6 +71,26 @@ cdef float calc_val_for_action(float* state, int action):
         val += state[i] * w[action][i]
 
     return val + bias[action]
+
+
+cdef int calc_best_action_using_checkpoint():
+    # Pretty straightforward — we create a checkpoint and get it's ID 
+    checkpoint_id = bbox.create_checkpoint()
+
+    cdef int best_action = -1, action
+    cdef float best_score = -1e9
+
+    for action in range(n_actions):
+        for _ in range(100):
+            bbox.do_action(action)
+
+        if bbox.c_get_score() > best_score:
+            best_score = bbox.c_get_score()
+            best_action = action
+
+        bbox.load_from_checkpoint(checkpoint_id)
+
+    return best_action
 
  
 def prepare_bbox():
@@ -113,29 +114,31 @@ def run_bbox(int total):
         float state[36]
     
     prepare_bbox()
+    
+    with open(train_file, 'w') as train_fout:
+      state = bbox.c_get_state()
+      while has_next:
+          action = calc_best_action_using_checkpoint() #get_action_by_state(state)
+          train_fout.write("%s,%s\n"%(",".join([str(feat) for feat in state]), action))
+          has_next = bbox.do_action(action)
 
-    state = bbox.c_get_state()
-    while has_next:
-        action = calc_best_action_using_checkpoint() #get_action_by_state(state)
-        has_next = bbox.do_action(action)
+          current_score = bbox.c_get_score()
+          reward = current_score - last_score
+          last_score = current_score
 
-        current_score = bbox.c_get_score()
-        reward = current_score - last_score
-        last_score = current_score
+          new_state = bbox.c_get_state()
 
-        new_state = bbox.c_get_state()
+          # save experience  
+          exp_states[N] = state
+          exp_actions[N] = action
+          exp_rewards[N] = reward
 
-        # save experience  
-        exp_states[N] = state
-        exp_actions[N] = action
-        exp_rewards[N] = reward
+          state = new_state
 
-        state = new_state
+          N += 1
 
-        N += 1
-
-        # batch updates
-    update_weights(total)
+          # batch updates
+      update_weights(total)
 
     bbox.finish(verbose=1)
 
